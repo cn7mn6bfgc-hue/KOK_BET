@@ -1,0 +1,1 @@
+function login(){let p=document.getElementById('pw').value;if(p==='Narishka'){location='gallery.html';}else{document.getElementById('msg').innerHTML='Неверный пароль';}}
