@@ -77,6 +77,34 @@ button{
 button:hover{
     transform:scale(1.08);
 }
+button:hover{
+    transform:scale(1.08);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .gallery {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
 </style>
 </head>
 
