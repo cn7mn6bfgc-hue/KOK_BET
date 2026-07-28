@@ -104,11 +104,25 @@ show();
 }
 
 function prev(){
-index--;
-if(index<0) index=photos.length-1;
-show();
+    index--;
+    if(index<0) index=photos.length-1;
+    show();
+}
+
+function toggleMusic(){
+    const music = document.getElementById("music");
+
+    if(music.paused){
+        music.play();
+    }else{
+        music.pause();
+    }
 }
 </script>
+<audio id="music" src="song.mp3"></audio>
 
+<div style="position:fixed;bottom:20px;right:20px;">
+    <button onclick="toggleMusic()">🎵 Музыка</button>
+</div>
 </body>
 </html>
