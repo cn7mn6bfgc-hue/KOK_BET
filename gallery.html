@@ -102,7 +102,14 @@ const photos=[
 let index=0;
 
 function show(){
-document.getElementById("photo").src=photos[index];
+    const img = document.getElementById("photo");
+
+    img.style.opacity = "0";
+
+    setTimeout(() => {
+        img.src = photos[index];
+        img.style.opacity = "1";
+    }, 200);
 }
 
 function next(){
@@ -119,18 +126,21 @@ function prev(){
 
 function toggleMusic(){
     const music = document.getElementById("music");
+    const btn = document.getElementById("musicBtn");
 
     if(music.paused){
         music.play();
+        btn.innerHTML = "⏸️";
     }else{
         music.pause();
+        btn.innerHTML = "▶️";
     }
 }
 </script>
 <audio id="music" src="song.mp3"></audio>
 
 <div style="position:fixed;bottom:20px;right:20px;">
-    <button onclick="toggleMusic()" style="width:60px;height:60px;border-radius:50%;padding:0;font-size:28px;">🎵</button>
+    <button id="musicBtn" onclick="toggleMusic()" style="width:60px;height:60px;border-radius:50%;padding:0;font-size:28px;">▶️</button>
 </div>
 </body>
 </html>
