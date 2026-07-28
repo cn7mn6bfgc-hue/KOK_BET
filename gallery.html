@@ -1,1 +1,90 @@
-<!DOCTYPE html><html lang='ru'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='stylesheet' href='style.css'><title>Галерея</title></head><body><div class='login'><h1>KOK BET</h1><p>Помести photo1.jpg и photo2.jpg в папку images.</p></div></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Галерея</title>
+
+<style>
+body{
+    margin:0;
+    background:#111;
+    color:#fff;
+    font-family:Arial,sans-serif;
+    text-align:center;
+}
+
+h1{
+    margin:20px 0;
+}
+
+.gallery{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:80vh;
+}
+
+.gallery img{
+    max-width:90%;
+    max-height:80vh;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(255,255,255,.2);
+}
+
+.buttons{
+    margin:20px;
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    margin:10px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<h1>❤️ Наша галерея ❤️</h1>
+
+<div class="gallery">
+    <img id="photo" src="изображения/photo1.jpg">
+</div>
+
+<div class="buttons">
+    <button onclick="prev()">◀ Назад</button>
+    <button onclick="next()">Вперед ▶</button>
+</div>
+
+<script>
+const photos=[
+"изображения/photo1.jpg",
+"изображения/photo2.jpg"
+];
+
+let index=0;
+
+function show(){
+document.getElementById("photo").src=photos[index];
+}
+
+function next(){
+index++;
+if(index>=photos.length) index=0;
+show();
+}
+
+function prev(){
+index--;
+if(index<0) index=photos.length-1;
+show();
+}
+</script>
+
+</body>
+</html>
